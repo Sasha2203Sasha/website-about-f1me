@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Path to F1 | Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.plot.ly/plotly-2.32.0.min.js"></script>
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <a href="#" class="logo">🏎️ My Path to F1</a>
+            <ul>
+                <li><a href="#hero">Home</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#dashboard">Dashboard</a></li>
+                <li><a href="#blog">Blog</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="standings.html">Standings</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <section id="hero">
+        <div class="hero-content">
+            <h1>Hi! I'm <span class="accent">Alexandra</span></h1>
+            <p class="subtitle">Aspiring F1 Strategy Engineer • Data Scientist • 16 y.o.</p>
+            <p>I analyze race data, build ML models, and dream of sitting on the pit wall one day.</p>
+            <div class="hero-buttons">
+                <a href="#projects" class="btn btn-primary">My Projects</a>
+                <a href="#contact" class="btn btn-outline">Get in Touch</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats -->
+    <section id="stats">
+        <div class="stat"><span class="stat-number">3</span> projects</div>
+        <div class="stat"><span class="stat-number">8</span> races analyzed</div>
+        <div class="stat"><span class="stat-number">700+</span> lines of code</div>
+        <div class="stat"><span class="stat-number">2</span> books read</div>
+    </section>
+
+    <!-- Projects -->
+    <section id="projects">
+        <h2>📊 My Projects</h2>
+
+        <!-- Project 1 -->
+        <div class="project-card">
+            <h3>🏎️ Tyre Degradation: Mercedes vs Ferrari</h3>
+            <p class="project-tags">Python • FastF1 • Pandas • Matplotlib • Scikit-learn</p>
+            <div class="project-images">
+            </div>
+            <p><strong>Hypothesis:</strong> Russell manages tyres better than Antonelli, Hamilton, and Leclerc.</p>
+            <p><strong>Result:</strong> Confirmed. Russell has the lowest degradation. Mercedes is more efficient than Ferrari over a race distance.</p>
+            <a href="https://github.com/sasha2203sasha/mercedes-2026-analysis" class="btn btn-primary" target="_blank">🔗 GitHub</a>
+        </div>
+
+        <!-- Project 2 -->
+        <div class="project-card">
+            <h3>🤖 ML: Predicting Top-10 Finishes</h3>
+            <p class="project-tags">Python • Random Forest • Scikit-learn</p>
+            <p><strong>Accuracy:</strong> 73.3% (1.5× better than random guessing).</p>
+            <p><strong>Insight:</strong> Qualifying position is the dominant predictor. Friday practice data alone does not add significant accuracy — and that itself is a valuable finding.</p>
+        </div>
+
+        <!-- Project 3 — coming soon -->
+        <div class="project-card">
+            <h3>🚧 Single-Lap Telemetry Comparison</h3>
+            <p class="project-tags">Python • FastF1 • Plotly</p>
+            <p><em>Coming soon...</em></p>
+        </div>
+    </section>
+
+    <!-- Dashboard -->
+    <section id="dashboard">
+        <h2>📈 Interactive Dashboard</h2>
+        <p>Select drivers to compare:</p>
+        <div id="dashboard-controls">
+            <select id="driver-select" multiple>
+<option value="RUS" selected>Russell</option>
+<option value="ANT" selected>Antonelli</option>
+<option value="HAM" selected>Hamilton</option>
+<option value="LEC" selected>Leclerc</option>
+</select>
+            <button onclick="updateDashboard()" class="btn btn-primary">Update</button>
+        </div>
+        <div id="plot-pace"></div>
+        <div id="plot-deg"></div>
+    </section>
+
+    <!-- Blog -->
+    <section id="blog">
+        <h2>📝 Blog</h2>
+
+        <div class="blog-post">
+            <h3>Why Does Russell Conserve Tyres Best?</h3>
+            <p class="blog-date">July 2026</p>
+            <p>After analyzing 8 race weekends, I noticed a pattern: Russell consistently shows the lowest tyre degradation. My hypothesis — a smoother driving style. Next step: compare single-lap telemetry to confirm it with data.</p>
+        </div>
+
+        <div class="blog-post">
+            <h3>What a "Negative" ML Result Taught Me</h3>
+            <p class="blog-date">July 2026</p>
+            <p>My Random Forest model matched the baseline instead of beating it — and that's not a failure. It proved that qualifying is genuinely the strongest predictor. Data helps, but it doesn't replace context and expertise.</p>
+        </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact">
+        <h2>📬 Contact</h2>
+        <p>I'm open to internship offers, collaboration on motorsport projects, or just a chat about Formula 1.</p>
+        <div class="contact-links">
+            <a href="https://github.com/sasha2203sasha" class="btn btn-outline" target="_blank">🐙 GitHub</a>
+            <a href="https://www.linkedin.com/in/alexandra-zharskaya-9a3b1841b?trk=feed_main-feed-card_feed-actor-name" class="btn btn-outline" target="_blank">💼 LinkedIn</a>
+            <a href="mailto:sashazharskaya@gmail.com" class="btn btn-outline">📧 Email</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>Made with ❤️ and Python | Data: FastF1 API | 2026 Season</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
