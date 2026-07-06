@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2026 Standings | F1 Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .standings-container {
+            display: flex;
+            gap: 2rem;
+            flex-wrap: wrap;
+            margin-top: 2rem;
+        }
+        
+        .standings-table {
+            flex: 1;
+            min-width: 350px;
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            overflow: hidden;
+        }
+        
+        .standings-table h3 {
+            background: var(--accent);
+            color: var(--bg);
+            margin: 0;
+            padding: 1rem;
+            text-align: center;
+            font-size: 1.2rem;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        
+        th,
+        td {
+            padding: 0.8rem 1rem;
+            text-align: left;
+            border-bottom: 1px solid var(--border);
+        }
+        
+        th {
+            background: #1a1a1a;
+            color: var(--text-secondary);
+            font-size: 0.85rem;
+            text-transform: uppercase;
+        }
+        
+        tr:hover {
+            background: #1a1a1a;
+        }
+        
+        .position {
+            font-weight: bold;
+            font-size: 1.2rem;
+            width: 40px;
+        }
+        
+        .gold {
+            color: #FFD700;
+        }
+        
+        .silver {
+            color: #C0C0C0;
+        }
+        
+        .bronze {
+            color: #CD7F32;
+        }
+        
+        .driver-name {
+            font-weight: 600;
+        }
+        
+        .team-tag {
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+        }
+        
+        .mercedes {
+            border-left: 4px solid #00D2BE;
+        }
+        
+        .ferrari {
+            border-left: 4px solid #DC0000;
+        }
+        
+        .redbull {
+            border-left: 4px solid #1E41FF;
+        }
+        
+        .mclaren {
+            border-left: 4px solid #FF8700;
+        }
+        
+        .aston {
+            border-left: 4px solid #006F62;
+        }
+        
+        .alpine {
+            border-left: 4px solid #0090FF;
+        }
+        
+        .williams {
+            border-left: 4px solid #005AFF;
+        }
+        
+        .rb {
+            border-left: 4px solid #6692FF;
+        }
+        
+        .haas {
+            border-left: 4px solid #B6BABD;
+        }
+        
+        .audi {
+            border-left: 4px solid #00E701;
+        }
+        
+        .cadillac {
+            border-left: 4px solid #FFB800;
+        }
+        
+        .points {
+            font-weight: bold;
+            text-align: center;
+        }
+        
+        .driver-card {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin: 1rem 0;
+            padding: 1rem;
+            background: var(--surface);
+            border-radius: 12px;
+            border: 1px solid var(--border);
+        }
+        
+        .driver-number {
+            font-size: 2rem;
+            font-weight: bold;
+            color: var(--accent);
+            min-width: 50px;
+            text-align: center;
+        }
+        
+        .driver-info h4 {
+            margin: 0;
+            font-size: 1.2rem;
+        }
+        
+        .driver-info p {
+            margin: 0.2rem 0;
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+        
+        .back-link {
+            display: inline-block;
+            margin-bottom: 1rem;
+            color: var(--accent);
+            text-decoration: none;
+            font-size: 1rem;
+        }
+        
+        .back-link:hover {
+            text-decoration: underline;
+        }
+        
+        .updated {
+            color: var(--text-secondary);
+            font-size: 0.85rem;
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav>
+        <div class="nav-container">
+            <a href="index.html" class="logo">🏎️ My Path to F1</a>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="standings.html">Standings</a></li>
+                <li><a href="index.html#projects">Projects</a></li>
+                <li><a href="index.html#dashboard">Dashboard</a></li>
+                <li><a href="index.html#blog">Blog</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section>
+        <a href="index.html" class="back-link">← Back to Home</a>
+        <h1>🏆 2026 Season Standings</h1>
+        <p>Real data from FastF1 API. After 8 rounds (Australia – Austria).</p>
+        <p class="updated">Last updated: July 2026</p>
+    </section>
+
+    <!-- Driver Standings -->
+    <section>
+        <h2>👤 Driver Standings</h2>
+        <div class="standings-table">
+            <h3>Drivers' Championship — Top 22</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Pos</th>
+                        <th>Driver</th>
+                        <th>Team</th>
+                        <th>Points</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="mercedes">
+                        <td class="position gold">1</td>
+                        <td class="driver-name">Kimi Antonelli</td>
+                        <td>Mercedes</td>
+                        <td class="points">158</td>
+                    </tr>
+                    <tr class="ferrari">
+                        <td class="position silver">2</td>
+                        <td class="driver-name">Lewis Hamilton</td>
+                        <td>Ferrari</td>
+                        <td class="points">114</td>
+                    </tr>
+                    <tr class="mercedes">
+                        <td class="position bronze">3</td>
+                        <td class="driver-name">George Russell</td>
+                        <td>Mercedes</td>
+                        <td class="points">110</td>
+                    </tr>
+                    <tr class="redbull">
+                        <td class="position">4</td>
+                        <td class="driver-name">Max Verstappen</td>
+                        <td>Red Bull</td>
+                        <td class="points">67</td>
+                    </tr>
+                    <tr class="mclaren">
+                        <td class="position">5</td>
+                        <td class="driver-name">Oscar Piastri</td>
+                        <td>McLaren</td>
+                        <td class="points">65</td>
+                    </tr>
+                    <tr class="ferrari">
+                        <td class="position">6</td>
+                        <td class="driver-name">Charles Leclerc</td>
+                        <td>Ferrari</td>
+                        <td class="points">62</td>
+                    </tr>
+                    <tr class="mclaren">
+                        <td class="position">7</td>
+                        <td class="driver-name">Lando Norris</td>
+                        <td>McLaren</td>
+                        <td class="points">59</td>
+                    </tr>
+                    <tr class="redbull">
+                        <td class="position">8</td>
+                        <td class="driver-name">HAD</td>
+                        <td>Red Bull</td>
+                        <td class="points">42</td>
+                    </tr>
+                    <tr class="alpine">
+                        <td class="position">9</td>
+                        <td class="driver-name">Pierre Gasly</td>
+                        <td>Alpine</td>
+                        <td class="points">40</td>
+                    </tr>
+                    <tr class="rb">
+                        <td class="position">10</td>
+                        <td class="driver-name">Liam Lawson</td>
+                        <td>RB</td>
+                        <td class="points">28</td>
+                    </tr>
+                    <tr class="haas">
+                        <td class="position">11</td>
+                        <td class="driver-name">Oliver Bearman</td>
+                        <td>Haas</td>
+                        <td class="points">17</td>
+                    </tr>
+                    <tr class="haas">
+                        <td class="position">12</td>
+                        <td class="driver-name">COL</td>
+                        <td>Haas</td>
+                        <td class="points">16</td>
+                    </tr>
+                    <tr class="rb">
+                        <td class="position">13</td>
+                        <td class="driver-name">LIN</td>
+                        <td>RB</td>
+                        <td class="points">13</td>
+                    </tr>
+                    <tr class="williams">
+                        <td class="position">14</td>
+                        <td class="driver-name">Carlos Sainz</td>
+                        <td>Williams</td>
+                        <td class="points">6</td>
+                    </tr>
+                    <tr class="williams">
+                        <td class="position">15</td>
+                        <td class="driver-name">Alex Albon</td>
+                        <td>Williams</td>
+                        <td class="points">5</td>
+                    </tr>
+                    <tr class="alpine">
+                        <td class="position">16</td>
+                        <td class="driver-name">Esteban Ocon</td>
+                        <td>Alpine</td>
+                        <td class="points">3</td>
+                    </tr>
+                    <tr class="audi">
+                        <td class="position">17</td>
+                        <td class="driver-name">Gabriel Bortoleto</td>
+                        <td>Audi</td>
+                        <td class="points">2</td>
+                    </tr>
+                    <tr class="aston">
+                        <td class="position">18</td>
+                        <td class="driver-name">Fernando Alonso</td>
+                        <td>Aston Martin</td>
+                        <td class="points">1</td>
+                    </tr>
+                    <tr class="redbull">
+                        <td class="position">19</td>
+                        <td class="driver-name">Sergio Pérez</td>
+                        <td>Red Bull</td>
+                        <td class="points">0</td>
+                    </tr>
+                    <tr class="aston">
+                        <td class="position">20</td>
+                        <td class="driver-name">Lance Stroll</td>
+                        <td>Aston Martin</td>
+                        <td class="points">0</td>
+                    </tr>
+                    <tr class="audi">
+                        <td class="position">21</td>
+                        <td class="driver-name">Valtteri Bottas</td>
+                        <td>Audi</td>
+                        <td class="points">0</td>
+                    </tr>
+                    <tr class="audi">
+                        <td class="position">22</td>
+                        <td class="driver-name">Nico Hülkenberg</td>
+                        <td>Audi</td>
+                        <td class="points">0</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <!-- Constructor Standings -->
+    <section>
+        <h2>🏎️ Constructor Standings</h2>
+        <div class="standings-table">
+            <h3>Constructors' Championship</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Pos</th>
+                        <th>Team</th>
+                        <th>Points</th>
+                        <th>Drivers</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="mercedes">
+                        <td class="position gold">1</td>
+                        <td class="driver-name">Mercedes-AMG</td>
+                        <td class="points">268</td>
+                        <td>Antonelli · Russell</td>
+                    </tr>
+                    <tr class="ferrari">
+                        <td class="position silver">2</td>
+                        <td class="driver-name">Ferrari</td>
+                        <td class="points">176</td>
+                        <td>Hamilton · Leclerc</td>
+                    </tr>
+                    <tr class="mclaren">
+                        <td class="position bronze">3</td>
+                        <td class="driver-name">McLaren</td>
+                        <td class="points">124</td>
+                        <td>Piastri · Norris</td>
+                    </tr>
+                    <tr class="redbull">
+                        <td class="position">4</td>
+                        <td class="driver-name">Red Bull Racing</td>
+                        <td class="points">109</td>
+                        <td>Verstappen · HAD · Pérez</td>
+                    </tr>
+                    <tr class="alpine">
+                        <td class="position">5</td>
+                        <td class="driver-name">Alpine</td>
+                        <td class="points">43</td>
+                        <td>Gasly · Ocon</td>
+                    </tr>
+                    <tr class="rb">
+                        <td class="position">6</td>
+                        <td class="driver-name">Visa Cash App RB</td>
+                        <td class="points">41</td>
+                        <td>Lawson · LIN</td>
+                    </tr>
+                    <tr class="haas">
+                        <td class="position">7</td>
+                        <td class="driver-name">Haas</td>
+                        <td class="points">33</td>
+                        <td>Bearman · COL</td>
+                    </tr>
+                    <tr class="williams">
+                        <td class="position">8</td>
+                        <td class="driver-name">Williams</td>
+                        <td class="points">11</td>
+                        <td>Sainz · Albon</td>
+                    </tr>
+                    <tr class="audi">
+                        <td class="position">9</td>
+                        <td class="driver-name">Audi</td>
+                        <td class="points">2</td>
+                        <td>Bortoleto · Bottas · Hülkenberg</td>
+                    </tr>
+                    <tr class="aston">
+                        <td class="position">10</td>
+                        <td class="driver-name">Aston Martin</td>
+                        <td class="points">1</td>
+                        <td>Alonso · Stroll</td>
+                    </tr>
+                    <tr class="cadillac">
+                        <td class="position">11</td>
+                        <td class="driver-name">Cadillac</td>
+                        <td class="points">0</td>
+                        <td>—</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <!-- Driver Profiles -->
+    <section>
+        <h2>🔍 Driver Profiles: Mercedes vs Ferrari</h2>
+        <p>Based on my 8-race analysis (FastF1 data).</p>
+
+        <div class="driver-card mercedes">
+            <div class="driver-number">12</div>
+            <div class="driver-info">
+                <h4>Kimi Antonelli <span class="team-tag">Mercedes</span></h4>
+                <p>🏆 <strong>Championship leader — 158 pts</strong> | Median race pace: <strong>82.42s</strong></p>
+                <p>Rookie season, dominating. Fastest median pace among the four. Degrades tyres slightly more than Russell, but raw speed compensates.</p>
+            </div>
+        </div>
+
+        <div class="driver-card mercedes">
+            <div class="driver-number">63</div>
+            <div class="driver-info">
+                <h4>George Russell <span class="team-tag">Mercedes</span></h4>
+                <p>3rd in standings — <strong>110 pts</strong> | Best tyre conservation: <strong>0.165 sec/lap</strong></p>
+                <p>Key strength: tyre management over long stints. Consistently lower degradation than Antonelli and both Ferraris.</p>
+            </div>
+        </div>
+
+        <div class="driver-card ferrari">
+            <div class="driver-number">44</div>
+            <div class="driver-info">
+                <h4>Lewis Hamilton <span class="team-tag">Ferrari</span></h4>
+                <p>2nd in standings — <strong>114 pts</strong> | Median race pace: <strong>82.00s</strong></p>
+                <p>Fastest median pace of all four. Experience shows in consistency. Pushing Ferrari forward in his first season with the team.</p>
+            </div>
+        </div>
+
+        <div class="driver-card ferrari">
+            <div class="driver-number">16</div>
+            <div class="driver-info">
+                <h4>Charles Leclerc <span class="team-tag">Ferrari</span></h4>
+                <p>6th in standings — <strong>62 pts</strong> | Highest peak degradation: <strong>0.291 sec/lap</strong></p>
+                <p>Fast over one lap but hardest on tyres among the four. Gap to Hamilton shows in race consistency.</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>Data: FastF1 API · Standings updated after Austrian GP (Rd 8) · Made with ❤️ and Python · 2026 Season</p>
+    </footer>
+
+</body>
+
+</html>
