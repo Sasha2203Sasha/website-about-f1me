@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Charts | F1 Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.plot.ly/plotly-2.32.0.min.js"></script>
+    <style>
+        .chart-container {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+        }
+        
+        .chart-container h3 {
+            margin-top: 0;
+            color: var(--accent);
+        }
+        
+        .chart-description {
+            color: var(--text-secondary);
+            margin-bottom: 1rem;
+            font-size: 0.95rem;
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav>
+        <div class="nav-container">
+            <a href="index.html" class="logo">🏎️ My Path to F1</a>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="standings.html">Standings</a></li>
+                <li><a href="charts.html">Charts</a></li>
+                <li><a href="index.html#projects">Projects</a></li>
+                <li><a href="index.html#blog">Blog</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section>
+        <a href="index.html" class="back-link">← Back to Home</a>
+        <h1>📊 Data Visualisations</h1>
+        <p>All charts based on real 2026 F1 season data (FastF1 API). First 8 rounds.</p>
+    </section>
+
+    <!-- Chart 1: Race Pace -->
+    <section>
+        <div class="chart-container">
+            <h3>🏁 Race Pace: All 4 Drivers</h3>
+            <p class="chart-description">Distribution of lap times. Narrower box = more consistent driver. Lower position = faster.</p>
+            <div id="chart-pace"></div>
+        </div>
+    </section>
+
+    <!-- Chart 2: Degradation -->
+    <section>
+        <div class="chart-container">
+            <h3>🛞 Tyre Degradation by Driver and Compound</h3>
+            <p class="chart-description">Lower is better. Negative values mean the driver got faster as the stint progressed (fuel burn-off).</p>
+            <div id="chart-deg"></div>
+        </div>
+    </section>
+
+    <!-- Chart 3: Degradation by Team -->
+    <section>
+        <div class="chart-container">
+            <h3>🏎️ Team Comparison: Mercedes vs Ferrari</h3>
+            <p class="chart-description">Average degradation across all stints. Mercedes shows a slight edge.</p>
+            <div id="chart-team"></div>
+        </div>
+    </section>
+
+    <!-- Chart 4: Speed Trace -->
+    <section>
+        <div class="chart-container">
+            <h3>🚀 Speed Trace: Russell vs Antonelli — Barcelona Q</h3>
+            <p class="chart-description">Speed (km/h) over one qualifying lap. Green = Russell, Red = Antonelli.</p>
+            <div id="chart-speed"></div>
+        </div>
+    </section>
+
+    <!-- Chart 5: Throttle & Brake -->
+
+
+    <footer>
+        <p>Data: FastF1 API · All charts interactive (Plotly.js) · 2026 Season</p>
+    </footer>
+
+    <script src="charts.js"></script>
+</body>
+
+</html>
