@@ -87,7 +87,10 @@
         </div>
     </section>
 
-    <!-- Chart 5: Throttle & Brake -->
+    // Chart 6: Team Ranking (MEDIUM + HARD only) const rankingData = [ { y: ['McLaren', 'Racing Bulls', 'Audi', 'Alpine', 'Haas', 'Williams', 'Mercedes', 'Red Bull', 'Ferrari', 'Cadillac', 'Aston Martin'], x: [-0.0776, -0.0650, -0.0510, -0.0508, -0.0483,
+    -0.0411, -0.0401, -0.0387, -0.0334, 0.0154, 0.0172], type: 'bar', orientation: 'h', marker: { color: ['#00D2BE', '#00D2BE', '#00D2BE', '#00D2BE', '#00D2BE', '#DC0000', '#DC0000', '#DC0000', '#DC0000', '#DC0000', '#DC0000'] }, text: ['-0.078', '-0.065',
+    '-0.051', '-0.051', '-0.048', '-0.041', '-0.040', '-0.039', '-0.033', '+0.015', '+0.017'], textposition: 'outside', textfont: { color: '#ffffff' } } ]; Plotly.newPlot('chart-ranking', rankingData, { title: '🏆 2026 Tyre Degradation Ranking — MEDIUM
+    & HARD Only', xaxis: { title: 'Degradation (sec/lap) — Lower is Better', gridcolor: '#2a2a2a' }, paper_bgcolor: '#141414', plot_bgcolor: '#141414', font: { color: '#ffffff' }, margin: { t: 40, l: 140 } });
 
 
     <footer>
