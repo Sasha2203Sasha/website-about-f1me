@@ -292,3 +292,129 @@ footer {
         max-width: 100%;
     }
 }
+/* ─── АДАПТИВНОСТЬ ДЛЯ ТЕЛЕФОНОВ ─── */
+@media (max-width: 768px) {
+    /* Навигация */
+    .nav-container {
+        flex-direction: column;
+        gap: 0.5rem;
+        padding: 0.5rem 1rem;
+    }
+    nav ul {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 0.8rem;
+    }
+    nav a {
+        font-size: 0.85rem;
+    }
+    .logo {
+        font-size: 1rem;
+    }
+
+    /* Hero */
+    #hero {
+        min-height: 60vh;
+        padding: 2rem 1rem;
+    }
+    #hero h1 {
+        font-size: 1.8rem;
+    }
+    .subtitle {
+        font-size: 1rem;
+    }
+    .hero-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    /* Статистика */
+    #stats {
+        gap: 1.5rem;
+        padding: 2rem 1rem;
+    }
+    .stat-number {
+        font-size: 1.8rem;
+    }
+
+    /* Секции */
+    section {
+        padding: 2rem 1rem;
+    }
+    h2 {
+        font-size: 1.5rem;
+    }
+
+    /* Проекты */
+    .project-images {
+        flex-direction: column;
+    }
+    .project-img {
+        max-width: 100%;
+    }
+
+    /* Таблицы */
+    table {
+        font-size: 0.75rem;
+    }
+    th, td {
+        padding: 0.5rem 0.4rem;
+    }
+    .standings-container {
+        flex-direction: column;
+    }
+
+    /* Графики */
+    .chart-container {
+        padding: 1rem;
+    }
+    .js-plotly-plot {
+        max-width: 100% !important;
+    }
+
+    /* Карточки пилотов */
+    .driver-card {
+        flex-direction: column;
+        text-align: center;
+    }
+    .driver-number {
+        font-size: 1.5rem;
+    }
+
+    /* Контакты */
+    .contact-links {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    /* Кнопки */
+    .btn {
+        padding: 0.6rem 1rem;
+        font-size: 0.9rem;
+        width: 100%;
+        text-align: center;
+    }
+}
+
+/* ─── ДЛЯ ОЧЕНЬ МАЛЕНЬКИХ ЭКРАНОВ ─── */
+@media (max-width: 480px) {
+    #hero h1 {
+        font-size: 1.4rem;
+    }
+    nav ul {
+        gap: 0.5rem;
+    }
+    nav a {
+        font-size: 0.75rem;
+    }
+    #stats {
+        flex-direction: column;
+        gap: 1rem;
+    }
+    table {
+        font-size: 0.65rem;
+    }
+    th, td {
+        padding: 0.3rem 0.2rem;
+    }
+}
