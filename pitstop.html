@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pit Stop Strategy | F1 Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.plot.ly/plotly-2.32.0.min.js"></script>
+    <style>
+        .highlight-green {
+            color: #00D2BE;
+            font-weight: bold;
+        }
+        
+        .highlight-red {
+            color: #DC0000;
+            font-weight: bold;
+        }
+        
+        .strategy-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1.5rem 0;
+        }
+        
+        .strategy-table th {
+            background: #1a1a1a;
+            color: var(--text-secondary);
+            padding: 0.8rem;
+            text-align: left;
+        }
+        
+        .strategy-table td {
+            padding: 0.8rem;
+            border-bottom: 1px solid var(--border);
+        }
+        
+        .strategy-table tr:hover {
+            background: #1a1a1a;
+        }
+        
+        .verdict {
+            display: inline-block;
+            padding: 0.3rem 0.8rem;
+            border-radius: 6px;
+            font-size: 0.85rem;
+            font-weight: bold;
+        }
+        
+        .verdict-good {
+            background: #00D2BE;
+            color: #000;
+        }
+        
+        .verdict-bad {
+            background: #DC0000;
+            color: #fff;
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav>
+        <div class="nav-container">
+            <a href="index.html" class="logo">🏎️ My Path to F1</a>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="standings.html">Standings</a></li>
+                <li><a href="charts.html">Charts</a></li>
+                <li><a href="pitstop.html">Pit Stops</a></li>
+                <li><a href="index.html#projects">Projects</a></li>
+                <li><a href="index.html#blog">Blog</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section>
+        <a href="index.html" class="back-link">← Back to Home</a>
+        <h1>🛞 Pit Stop Strategy Analysis</h1>
+        <p>Austrian GP 2026 — Optimal vs Real Strategy for All Top Teams</p>
+        <p class="updated">Model: Linear regression + tyre age limits (SOFT: 20, MEDIUM: 30, HARD: 40 laps)</p>
+    </section>
+
+    <!-- Key Numbers -->
+    <section id="stats">
+        <div class="stat"><span class="stat-number">8</span> drivers analysed</div>
+        <div class="stat"><span class="stat-number">71</span> lap race</div>
+        <div class="stat"><span class="stat-number">22s</span> pit loss</div>
+        <div class="stat"><span class="stat-number">1</span> team got it right</div>
+    </section>
+
+    <!-- Results Table -->
+    <section>
+        <h2>📊 Strategy Comparison</h2>
+        <table class="strategy-table">
+            <thead>
+                <tr>
+                    <th>Driver</th>
+                    <th>Team</th>
+                    <th>Best Strategy</th>
+                    <th>Best Time</th>
+                    <th>Real Strategy</th>
+                    <th>Real Time</th>
+                    <th>Loss</th>
+                    <th>Verdict</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>K. Antonelli</strong></td>
+                    <td>Mercedes</td>
+                    <td>2 stops (23, 47)<br>MED → HARD → MED</td>
+                    <td>5141.4s</td>
+                    <td>2 stops (24, 51)<br>MED → HARD</td>
+                    <td>5142.1s</td>
+                    <td>+0.7s</td>
+                    <td><span class="verdict verdict-good">PERFECT</span></td>
+                </tr>
+                <tr>
+                    <td><strong>G. Russell</strong></td>
+                    <td>Mercedes</td>
+                    <td>1 stop (30)<br>MED → HARD</td>
+                    <td>5133.1s</td>
+                    <td>2 stops (19, 43)<br>MED → HARD</td>
+                    <td>5189.1s</td>
+                    <td class="highlight-red">+56.0s</td>
+                    <td><span class="verdict verdict-bad">WRONG</span></td>
+                </tr>
+                <tr>
+                    <td><strong>L. Hamilton</strong></td>
+                    <td>Ferrari</td>
+                    <td>1 stop (29)<br>MED → HARD</td>
+                    <td>5138.1s</td>
+                    <td>3 stops (12, 25, 42)<br>MED → HARD → SOFT</td>
+                    <td>5226.2s</td>
+                    <td class="highlight-red">+88.1s</td>
+                    <td><span class="verdict verdict-bad">WRONG</span></td>
+                </tr>
+                <tr>
+                    <td><strong>C. Leclerc</strong></td>
+                    <td>Ferrari</td>
+                    <td>1 stop (29)<br>MED → HARD</td>
+                    <td>5151.5s</td>
+                    <td>3 stops (13, 37, 59)<br>MED → HARD → SOFT</td>
+                    <td>5257.9s</td>
+                    <td class="highlight-red">+106.4s</td>
+                    <td><span class="verdict verdict-bad">WORST</span></td>
+                </tr>
+                <tr>
+                    <td><strong>L. Norris</strong></td>
+                    <td>McLaren</td>
+                    <td>1 stop (29)<br>MED → HARD</td>
+                    <td>5162.9s</td>
+                    <td>2 stops (21, 47)<br>MED → HARD</td>
+                    <td>5219.7s</td>
+                    <td class="highlight-red">+56.8s</td>
+                    <td><span class="verdict verdict-bad">WRONG</span></td>
+                </tr>
+                <tr>
+                    <td><strong>O. Piastri</strong></td>
+                    <td>McLaren</td>
+                    <td>1 stop (29)<br>MED → HARD</td>
+                    <td>5155.4s</td>
+                    <td>2 stops (19, 42)<br>MED → HARD</td>
+                    <td>5209.2s</td>
+                    <td class="highlight-red">+53.8s</td>
+                    <td><span class="verdict verdict-bad">WRONG</span></td>
+                </tr>
+                <tr>
+                    <td><strong>M. Verstappen</strong></td>
+                    <td>Red Bull</td>
+                    <td>1 stop (29)<br>MED → HARD</td>
+                    <td>5159.7s</td>
+                    <td>2 stops (18, 49)<br>MED → HARD</td>
+                    <td>5187.1s</td>
+                    <td class="highlight-red">+27.4s</td>
+                    <td><span class="verdict verdict-bad">WRONG</span></td>
+                </tr>
+                <tr>
+                    <td><strong>L. Lawson</strong></td>
+                    <td>Red Bull</td>
+                    <td>1 stop (29)<br>MED → HARD</td>
+                    <td>5219.9s</td>
+                    <td>2 stops (19, 45)<br>MED → HARD</td>
+                    <td>5279.3s</td>
+                    <td class="highlight-red">+59.4s</td>
+                    <td><span class="verdict verdict-bad">WRONG</span></td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+
+    <!-- Key Findings -->
+    <section>
+        <h2>🧠 Key Findings</h2>
+        <div class="project-card">
+            <h3>🥇 Only Antonelli Had the Right Strategy</h3>
+            <p>Mercedes got it perfect for their rookie: <strong>2 pit stops, laps 24 and 51</strong>. The model confirms this was within 0.7 seconds of the theoretical optimum.</p>
+        </div>
+        <div class="project-card">
+            <h3>📉 Ferrari — Worst Strategy of the Day</h3>
+            <p>Hamilton and Leclerc both made <strong>3 pit stops</strong> when the model says <strong>1 stop on lap 29</strong> was optimal. Combined loss: <span class="highlight-red">194 seconds</span>.</p>
+        </div>
+        <div class="project-card">
+            <h3>🔧 1 Stop Was Best for 7 of 8 Drivers</h3>
+            <p>MEDIUM → HARD with a single stop around lap 29–30. The model with realistic tyre limits (30 laps for MEDIUM, 40 for HARD) confirms this is feasible and fastest.</p>
+        </div>
+        <div class="project-card">
+            <h3>🤖 How the Model Works</h3>
+            <p>Linear regression on lap times vs tyre age for each driver. Brute-force search over all possible 1, 2, and 3-stop strategies. Realistic tyre age limits applied (SOFT: 20, MEDIUM: 30, HARD: 40 laps).</p>
+        </div>
+    </section>
+
+    <footer>
+        <p>Data: FastF1 API | Model: Python, Scikit-learn | Austrian GP 2026 | Made with ❤️</p>
+    </footer>
+
+</body>
+
+</html>
